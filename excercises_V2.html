@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller JS</title>
+</head>
+<body>
+    <h1>Taller de JS-JavaScript</h1>
+    <script>
+        //Para declarar variables global
+        var code = "WebDev";
+        console.info(code);
+
+        // ámbito de bloques con let
+        let code2 = "WebDevFundamentals"
+        console.info(code2)
+        // window es el objeto global de js en los navegadores
+        console.info(window)
+
+
+        // Diferencia entre var y let
+        console.info("==============================");
+        console.info("========uso de VAR========");
+        var lenguaje = "JS"
+        console.info("Variable lenguaje antes del bloque",lenguaje);
+        {
+            var lenguaje = "HTML";
+            console.info("Variable lenguaje dentro del bloque",lenguaje);
+        }
+        console.info("Variable lenguaje después del bloque",lenguaje);
+
+        console.info("==============================");
+        
+        //  Con bloques uso de let
+        console.info("==============================");
+        console.info("====== uso de LET ========");
+        let lenguaje2 = "JS"
+        console.info("Variable lenguaje antes del bloque",lenguaje2);
+        {
+            let lenguaje2 = "HTML";
+            console.info("Variable lenguaje dentro del bloque",lenguaje2);
+        }
+        console.info("Variable lenguaje después del bloque",lenguaje2);
+
+        // Declarar variables constantes
+        console.info("========== CONSTANTES =======================");
+        const GRAVITY = 9.81
+        // no pueden declarar constantes vacías
+        //const PQ;
+        // No se puede cambiar su valor
+        //GRAVITY = 18.50;
+        console.info(GRAVITY)
+        console.info("==============================");
+
+
+        console.info("======Objetos, Arreglos ======================");
+        // Con objetos y arreglos si se puede redeclarar el valor si lo defines con let o const
+        // Objetos
+        const user = {
+            nombre: "Antonio",
+            edad:43
+        }
+        // Arreglos
+        // Lenguajes
+        const lenguajes = ["HTML","CSS","JS"];
+        console.info(user);
+        console.info(lenguajes);
+        
+        console.info("====== Agregando/Modificando ======================");
+        user.nombre = "José";
+        user.email = "joseaso@prodigy.net.mx";
+        lenguajes.push("Node.JS")
+        
+        console.info(user);
+        console.info(lenguajes);
+        // const cuando el tipo de tu variable no cambia es decir si es array un objeto o constante
+        // let cuando el tipo puede cambiar de texto y número, arreglo, u objeto
+        
+        
+        console.info("====== Documentación ======================");
+        /* MDN Mozilla Developer Network
+        Documentación
+        Objetos con 2 atributos
+        Propiedades -  características de los objetos
+        Métodos - acciones que realizan los objetos
+        */
+       
+       console.info("====== Strings ======================");
+        // Cadena de texto strings
+        let nombre = "Antonio";
+        let apellido = 'Salinas';
+        let saludo = new String("Hola Mundo");
+      
+        let lorem = "       Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.    "
+
+        console.info(nombre, apellido, saludo);
+
+        /*  toUpperCase - cambiar a mayúsculas
+            toLowerCase - cambiar a minúsculas
+            inclues - busca una cadena
+            trim - elimina espacios
+            split - corta cadenas
+        */
+        console.info( nombre.length,
+                     apellido.length,
+                     saludo.length,
+                     nombre.toUpperCase(),
+                     apellido.toLowerCase(),
+                     lorem.includes("desde"),
+                     lorem.includes("JASO"),
+                     lorem.trim(),
+                     lorem.split(" "),
+                     lorem.split(',')
+                     );
+
+
+        // Características
+        // Concatenación
+        // Interpolación
+
+        let nombreS = "José Antonio";
+        let apellidoS = "Salinas";
+        // El más es el operador para concatenar 
+        let saludoS = "Que tal mi nombres es " + nombreS + " " + apellidoS;
+        console.info(saludoS);
+        // Interpolación
+        // se debe hacer uso de template string
+        // y se usan backticks "`"
+        let saludo2 = `Qué tal mi nombre es ${nombreS} ${apellidoS}`;
+        console.info(saludo2);
+        // Esta variable causará error
+        /*
+        let ul = "
+        <ul>
+           <li>Uno</li>
+           <li>Dos</li>
+           <li>Tres</li>
+        </ul>";
+        */
+        let ul = "<ul><li>Uno</li><li>Dos</li><li>Tres</li></ul>";
+        console.info(ul);
+        let ul2 = `
+        <ul>
+            <li>Uno</li>
+            <li>Dos</li>
+            <li>Tres</li>
+        </ul>`;
+        console.info(ul2);
+
+        // Números
+        let number = 2;
+        let number2 = new Number(1);
+        let c = 3.15
+        let d = "5.6";
+
+        console.info(number, number2);
+        // Número de decimales
+        console.info(c.toFixed(1));
+        console.info(c.toFixed(5));
+        // Regresa la parte entera
+        console.info(parseInt(c));
+        console.info(parseFloat(c));
+        console.info(typeof c, typeof d);
+        console.info(number + number2);
+        console.info(c + d);
+
+        // Casting
+        console.info(c + parseInt(d));
+        console.info(c + parseFloat(d));
+
+        // Booleanos
+        let verdadero = true;
+        let falso = false;
+        let v = Boolean(true);
+        let f = Boolean(false);
+        console.info(verdadero,falso,v,f);
+        console.info(typeof verdadero, typeof falso);
+        console.info(Boolean(0));
+        console.info(Boolean(-7));
+        console.info(Boolean(""));
+        console.info(Boolean(" "));
+
+        /* null , undefined & NaN */
+
+        /*representan un valor ausente
+        undefined variable no inicializada y el valor esta ausente
+        */
+        let indefinida;
+        console.info(indefinida);
+        
+        // ausencia de valor y asignado intencionalmente
+        let nulo = null;
+        console.info(nulo);
+
+        // NaN - Not a Number
+        let noEsUnNumero = "hola" * 3.7;
+        console.info(noEsUnNumero);
+
+
+        console.info("====== Funciones ======");
+
+        /* FUNCIONES
+        bloque de código independiente del scope global, definido 1 vez y ejecutado en cualquier momento
+        puede o no recibir parámetros
+        puede o no devolver valores
+        también se consideran objetos
+
+        Función declara
+        Función expresada
+        */
+
+        function miFuncion() {
+            console.info("Uno");
+            console.info("Dos");
+            console.info("Tres");
+        }
+
+        function miFuncionDevuelveValor() {
+            
+            return "Regresa cadena";
+        }
+
+        function miFuncionRecibeValores(nombre = 'Invitado', edad = 0) {
+            console.info(`Qué tal soy ${nombre} y tengo ${edad} años`);            
+        }
+
+        // Invocación de función
+        miFuncion();
+        let valor = miFuncionDevuelveValor();
+        console.info(valor);
+        
+        miFuncionRecibeValores('Antonio',43);
+        miFuncionRecibeValores();
+
+        // Función declarada
+        funcionDeclarada();
+        function funcionDeclarada() {
+            console.info("Función declarada se puede invocar en cualquier parte de nuestro código");
+        }
+        funcionDeclarada();
+
+        // Funcion expresada
+        // funcionExpresada();
+        // Función anónima
+        const funcionExpresada = function() {
+            console.info("Función expresada,  una función asignada como valor a una variable");
+        }
+        funcionExpresada();
+
+        // ARREGLOS
+        console.info("====== Arreglos ======");
+        const array1 = [];
+        const array2 = [1, 'sapo',['S','A','P','O']];
+        console.info(array1);
+        console.info(array2);
+        console.info(array2.length);
+        // Posición total de elementos menos 1
+        console.info(array2[2]);
+        console.info(array2[2][2]);
+
+        const array3 = Array.of('X','Y','Z',9,8,7);
+        console.info(array3);
+        const array4 = Array(25).fill(false);
+        console.info(array4);
+
+        // Ya no es muy usada
+        const array5 = new Array();
+        console.info(array5);
+        const array6 = new Array(1,2,3,4,false,true);
+        console.info(array6);
+        
+        const array7 = Array.of('HTML','CSS','JavaScript');
+        console.info(array7);
+        array7.push('Node,js'); // Agrega al arreglo
+        console.info(array7);
+        array7.pop(); // Saca el ultimp objeto
+        console.info(array7);
+
+        array7.forEach( function(element, index) {
+            console.info(`<li id=${index}">${element}</li>`);
+        });
+
+
+        
+        /*Ejercicio 1: Escribe un programa de una sola línea que haga que aparezca en la pantalla un alert que diga “Hello World”.*/
+        //alert("Hello World !!! ");
+
+        /*Ejercicio 2: Escribe un programa de una sola línea que escriba en la pantalla un texto que diga “Hello World” (document.write).*/
+        //document.write("Hola Mundo !!!");
+        
+        /*Ejercicio 3: Escribe un programa de una sola línea que escriba en la pantalla el resultado de sumar 3 + 5.*/
+        //alert(5 + 3);
+        
+        /*Ejercicio 4: Escribe un programa de dos líneas que pida el nombre del usuario con un prompt y escriba un texto que diga “Hola nombreUsuario”*/
+        //let nombreUsuario = prompt('Ingresa el Nombre del usuario: ','Invitado');
+        //alert(`Hola ${nombreUsuario} bienvenido a tus primeros ejercicios de JavaScript`);
+
+        /*Ejercicio 5: Escribe un programa de tres líneas que pida un número, pida otro número y escriba el resultado de sumar estos dos números.*/
+        //let numberOne = prompt('Ingresa el primer número: ',1);
+        //let numberTwo = prompt('Ingresa el segundo número: ',2);
+        //alert(+numberOne + +numberTwo);
+        /*
+        if ( isNaN(numberOne) || isNaN(numberTwo) )
+             alert('El o los valores ingresados no son número');
+        else
+             alert(+numberOne + +numberTwo);
+        */
+
+        //EJERCICIOS ADICIONALES
+        //E1: Contar la longitud de una cadena
+        // Con función declarada
+        //function stringLength(myString = '') {
+        //    if ( !myString )
+        //    return ('La cadena ingresada no tiene valor o esta vacía');
+        //    else
+        //    return (`La cades ${myString} tiene ${myString.length} caracteres de longitud`);
+        //}
+        // Con función expresada con operador ternario
+        //const stringLength = (myString = '') => {
+            //    return ( !myString )
+            //    ? ('La cadena ingresada no tiene valor o esta vacía') 
+            //    : (`La cades ${myString} tiene ${myString.length} caracteres de longitud`)
+        //}
+        //let myString = prompt('Ingresa la cadena','Esta es un prueba');
+        //let result = stringLength(myString);
+        //alert(`Resultado: ${result}`);
+
+        //E2: Devolver un substring de una cadena, utilizar función slice
+        //const getSubstring = (myString = '', myLength = undefined) => {
+        //    return ( !myString )
+        //    ? 'La cadena ingresada no tiene valor o esta vacía'
+        //    : ( myLength === undefined )
+        //        ? 'No ingresaste longitud de la subcadena'
+        //        : (`El substring de la cadena "${myString}"" es "${myString.slice(0,myLength)}"`)
+        //}
+//
+        //let myString = prompt('Ingresa la cadena','Mi cadena');
+        //let myLength = prompt('Ingresa la longitud de la substring',1);
+        //let result = getSubstring(myString, myLength);
+        //alert(`Resultado: ${result}`);
+
+
+        //E3: Regresar un arreglo de textos segun la cadena ingresada y el separador, usar la función split
+        //const stringToArray = (myString = '', mySeparator = undefined) => {
+        //    return ( !myString )
+        //    ? 'La cadena ingresada no tiene valor o esta vacía'
+        //    : ( mySeparator === undefined )
+        //        ? 'No ingresaste el separador de cadena'
+        //        : (`El arreglo resultante de la cadena "${myString}"" es "${myString.split(mySeparator)}"`)
+        //}
+//
+        //let myString = prompt('Ingresa la cadena','Mi cadena');
+        //let mySeparator = prompt('Ingresa el separador de cadena',undefined);
+        //let result = stringToArray(myString, mySeparator);
+        //alert(`Resultado: ${result}`);
+
+
+        //E4: Repetir un texto N veces, usar función Math y ciclo for
+        //const repeatString = (myString = '', myRepeatNumber = undefined) => {
+        //    if ( !myString )
+        //         return 'La cadena ingresada no tiene valor o esta vacía';
+        //    if ( myRepeatNumber === undefined )
+        //         return 'No ingresaste el número de veces a repetir la cadena';
+        //    if ( myRepeatNumber === 0 )
+        //         return 'Error, no puede ser 0 en número de veces a repetir';
+        //    if ( Math.sign(myRepeatNumber) === -1 )
+        //         return 'El número de veces a repetir no puede ser negativo'; 
+//
+        //    let result = '';
+        //    for (let index = 0; index < myRepeatNumber; index++) {
+        //         result += myString + ' ';
+        //    }
+        //     return result;           
+        //}
+//
+        //let myString = prompt('Ingresa la cadena','Mi cadena');
+        //let myRepeatNumber = prompt('Ingresa el número de veces a repetir la cadena',1);
+        //let result = repeatString(myString, myRepeatNumber);
+        //alert(`Resultado: ${result}`);
+
+        //E5: Invertir palabras
+        //const invertString = (myString = '') => {
+        //    return ( !myString )
+        //    ? 'La cadena ingresada no tiene valor o esta vacía'
+        //    : (`La cadena "${myString}" invertida es "${myString.split('').reverse().join('')}"`)
+        //}
+//
+        //let myString = prompt('Ingresa la cadena','Mi cadena');
+        //let result = invertString(myString);
+        //alert(`Resultado: ${result}`);
+
+        //E6: Contar repetición de palabras
+        //const countRepeatString = (myString = '', myWord = '') => {
+        //    if ( !myString )
+        //         return 'La cadena ingresada no tiene valor o esta vacía';
+        //    if ( !myWord )
+        //         return 'La palabra a buscar no tiene valor o esta vacía';
+//
+        //    let i = 0, contador = 0;
+        //    while ( i !== -1 ) {
+        //            i = myString.indexOf(myWord,i);
+        //            if ( i !== -1) {
+        //                 i++;
+        //                 contador++;
+        //            }
+        //    }
+        //    return (`La cadena "${myString}" tiene repetida la palabra "${myWord} en ${contador} ocasiones"`);
+        //}
+//
+        //let myString = prompt('Ingresa la cadena','Mi cadena');
+        //let myWord = prompt('Ingresa la cadena a buscar','error');
+        //let result = countRepeatString(myString, myWord);
+        //alert(`Resultado: ${result}`);
+
+        //E7: Palíndromo
+        //const isPalindrome = (myString = '') => {
+        //    if ( !myString )
+        //s         return 'La cadena ingresada no tiene valor o esta vacía';
+        //    
+        //    myString =  myString.toLocaleLowerCase();
+        //    let stringReverse = myString.split('').reverse().join('');
+        //    if ( myString === stringReverse )
+        //         return (`La cadena "${myString}" SI ES palíndromo, la palabra al revés es "${stringReverse}"`);
+        //    else
+        //         return (`La cadena "${myString}" NO ES palíndromo, palabra al revés es "${stringReverse}"`);
+        //}
+//
+        //let myString = prompt('Ingresa la cadena','Mi cadena');
+        //let result = isPalindrome(myString);
+        //alert(`Resultado: ${result}`);
+
+
+        ////E8: Replace
+        //const stringReplace = (myString = '', myReplace = '') => {
+        //    return ( !myString )
+        //             ? 'La cadena ingresada no tiene valor o esta vacía'
+        //             : ( !myReplace )
+        //               ? 'La cadena a reemplazar no tiene valor o esta vacía'
+        //               : `La cadena "${myString}" eliminará el patrón ${myReplace} y la cadena final es "${myString.replace(new RegExp(myReplace,"ig"),'')}"`
+//
+        //}
+//
+        //let myString = prompt('Ingresa la cadena','Mi cadena');
+        //let myReplace = prompt('Ingresa la cadena a reemplazar','cadena');
+        //let result = stringReplace(myString,myReplace);
+        //alert(`Resultado: ${result}`);
+
+        //E9: Número Aleatorio entre 301 y 400
+        //const randomNumber = () => {
+        //    return ( Math.round((Math.random()*100) + 300))
+        //}
+//
+        //let result = randomNumber();
+        //alert(`Resultado: ${result}`);
+        //E10:Evaluar si un número es capicua
+        //const isCapicua = (myNumber = 0) => {
+        //      if ( isNaN(myNumber) )
+        //           return 'No Ingresaste un número';
+        //      myNumber = myNumber.toString();
+        //      let myNumberReverse = myNumber.split('').reverse().join('');
+//
+        //      return ( myNumber === myNumberReverse ) 
+        //             ? `El número ingresado SI ES capicua ${myNumber} al revés ${myNumberReverse}`
+        //             : `El número ingresado NO ES capicua ${myNumber} al revés ${myNumberReverse}`
+        //}
+        //
+        //let myNumber = prompt('Ingresa el número',2002);
+        //let result = isCapicua(myNumber);
+        //alert(`Resultado: ${result}`);
+
+        //E11: Factorial de un número
+ 
+        //const getFactorial = (myNumber = undefined) => {
+        //      if ( isNaN(myNumber) )
+        //           return 'No Ingresaste un número';
+        //      if ( myNumber === 0 )
+        //           return 'El número no puede ser cero';
+        //      if ( Math.sign(myNumber) === -1 )
+        //           return 'El número no puede ser negativo';
+//
+        //      let factorial = 1; 
+        //      for ( let i = myNumber; i > 1; i-- ) {
+        //            factorial *= i;
+        //      }
+//
+        //      return `El factorial del número ${myNumber} es ${factorial}`
+        //}
+        //
+        //let myNumber = prompt('Ingresa el número',2002);
+        //let result = getFactorial(myNumber);
+        //alert(`Resultado: ${result}`);
+        //E12:
+
+
+    </script>
+</body>
+</html>
