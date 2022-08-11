@@ -1,0 +1,22 @@
+html pre {
+          font-family: sans-serif;
+}
+
+body {
+      width: 50%;
+      max-width: 800px;
+      min-width: 480px;
+      margin: 0 auto;
+}
+
+.lastResult {
+             color: white;
+             padding: 3px;
+             max-width: 440px;
+}
+
+.guessSubmit {
+              color:blue;
+              text-align: center;
+}
+
